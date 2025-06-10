@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anamika | Portfolio</title>
+  <link rel="stylesheet" href="portfolio styles.css" />
+</head>
+<body>
+
+  <!-- Burger Menu Navigation -->
+<header class="top-header">
+  <div class="burger" id="burger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- Hero Section -->
+  <header id="hero" class="hero-section">
+  <div class="hero-content">
+    <h1>Hello, I'm <span>Anamika</span></h1>
+    <p>Full-Stack Web Developer Intern</p>
+    <a href="#contact" class="hero-button">Let's Connect</a>
+  </div>
+</header>
+
+
+  <!-- About Section -->
+  <section id="about" class="section">
+  <h2 class="section-title">About Me</h2>
+  <div class="about-container row-layout">
+    <img src="myimage.jpeg" alt="Anamika" class="profile-pic">
+    <div class="about-text">
+      <p>
+        I'm Anamika, a passionate full-stack web development intern who enjoys designing sleek user interfaces and building dynamic web experiences. I love working with both front-end and back-end technologies, and I’m always eager to learn new tools and frameworks. When I'm not coding, you'll find me exploring UI/UX design trends and experimenting with creative side projects.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Skills Section -->
+  <section id="skills" class="section alt-bg">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>C Programming</span>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-grid">
+    
+    <!-- Project 1: Portfolio Website -->
+    <div class="project-card">
+      <img src="web.jpg" alt="Portfolio Website" class="project-img">
+      <h3>Portfolio Website</h3>
+      <p>A personal responsive website with a sidebar menu and modern design using HTML, CSS, and JavaScript.</p>
+    </div>
+
+    <!-- Project 2: health monitoring -->
+    <div class="project-card">
+      <img src="health.jpg" alt="Health monitoring App" class="project-img">
+      <h3>health monitoring app</h3>
+      <p>A health monitoring app is a digital tool designed to track, analyze, and offer insights into an individual’s health metrics and wellness activities.</p>
+    </div>
+
+    <!-- Project 3: Todo List -->
+    <div class="project-card">
+      <img src="todo.jpg" alt="Todo List App" class="project-img">
+      <h3>Todo List App</h3>
+      <p>A simple task tracker that allows users to add and delete daily tasks. Data stored in local storage.</p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="section alt-bg">
+  <h2 class="section-title">Contact Me</h2>
+  <form id="contactForm" class="contact-form">
+    <input type="text" id="name" name="name" placeholder="Your Name" required />
+    <input type="email" id="email" name="email" placeholder="Your Email" required />
+    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+    <p id="formStatus"></p>
+  </form>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Anamika M J</p>
+  </footer>
+
+  <script src="portfolio script.js"></script>
+</body>
+</html>
