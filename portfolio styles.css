@@ -13,8 +13,8 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: #1a1a2e;
   color: #eaeaea;
-  padding-top: 60px; /* Space for fixed top header */
-  margin-left: 200px; /* Space for sidebar */
+  padding-top: 60px;
+  margin-left: 200px;
 }
 
 /* ===== Sidebar Navigation ===== */
@@ -32,15 +32,20 @@ body {
   border-right: 1px solid #333;
 }
 
-.sidebar ul {
+.sidebar ul,
+.mobile-nav ul {
   list-style: none;
+  padding: 0;
 }
 
-.sidebar li {
+.sidebar li,
+.mobile-nav li {
   margin: 20px 0;
+  text-align: center;
 }
 
-.sidebar a {
+.sidebar a,
+.mobile-nav a {
   color: #eaeaea;
   text-decoration: none;
   font-size: 1.1rem;
@@ -50,6 +55,14 @@ body {
 .sidebar a:hover {
   color: #00ffe7;
   transform: scale(1.05);
+}
+
+.mobile-nav a {
+  color: white;
+}
+
+.mobile-nav a:hover {
+  color: #ffe100;
 }
 
 /* ===== Top Header & Burger Menu ===== */
@@ -83,7 +96,7 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Mobile Nav */
+/* ===== Mobile Nav ===== */
 .mobile-nav {
   position: fixed;
   top: 0;
@@ -93,27 +106,6 @@ body {
   background: #000;
   padding-top: 60px;
   transition: left 0.3s ease;
-}
-
-.mobile-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-.mobile-nav li {
-  margin: 25px 0;
-  text-align: center;
-}
-
-.mobile-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.3s;
-}
-
-.mobile-nav a:hover {
-  color: #ffe100;
 }
 
 .mobile-nav.active {
@@ -160,11 +152,11 @@ body {
   background: #00ffe7;
   color: #000;
   border: none;
-  text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
-  transition: background 0.3s, transform 0.3s;
   display: inline-block;
+  transition: background 0.3s, transform 0.3s;
+  text-decoration: none;
 }
 
 .hero-button:hover {
@@ -254,7 +246,7 @@ body {
 }
 
 .project-card {
-  background: #ffffff;
+  background: #00ffe7;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -299,7 +291,8 @@ body {
 .contact-form input,
 .contact-form textarea {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 3px solid #00ffe7;
+  box-shadow: 0 0 15px rgba(0, 255, 231, 0.4);
   border-radius: 6px;
   font-size: 1rem;
 }
@@ -334,4 +327,3 @@ footer {
   color: #aaa;
   font-size: 0.9rem;
 }
-
