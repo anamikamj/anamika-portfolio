@@ -5,46 +5,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (burger && mobileNav) {
     burger.addEventListener("click", () => {
-      console.log("Burger menu clicked!"); // Debugging
-      mobileNav.classList.toggle("show");
+      mobileNav.classList.toggle("active");
     });
 
-    // Close mobile menu when a link is clicked
     document.querySelectorAll(".mobile-nav a").forEach(link => {
       link.addEventListener("click", () => {
-        console.log("Mobile nav link clicked!"); // Debugging
-        mobileNav.classList.remove("show");
+        mobileNav.classList.remove("active");
       });
     });
   } else {
-    console.error("Burger or mobileNav element not found!"); // Debugging
+    console.error("Burger or mobileNav element not found!");
   }
 
-  // Contact form submission with alert
+  // ✅ Contact form submission with Firebase
   const contactForm = document.getElementById("contactForm");
 
   if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
+    contactForm.addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      // Get values
       const name = document.getElementById("name").value.trim();
       const email = document.getElementById("email").value.trim();
       const message = document.getElementById("message").value.trim();
 
-      // Basic validation
       if (!name || !email || !message) {
         alert("Please fill in all fields.");
         return;
       }
 
-      // Simulate form submission
-      alert(`Thank you, ${name}! Your message has been sent.`);
+      try {
+        await db.collection("messages").add({
+          name,
+          email,
+          message,
+          timestamp: new Date()
+        });
 
-      // Reset the form
-      contactForm.reset();
+        document.getElementById("formStatus").innerText = "✅ Message sent successfully!";
+        contactForm.reset();
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        document.getElementById("formStatus").innerText = "❌ Failed to send message.";
+      }
     });
   } else {
-    console.error("Contact form element not found!"); // Debugging
+    console.error("Contact form element not found!");
   }
 });
